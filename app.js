@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const passport = require('passport');
 const authRoutes = require('./src/routes/authRoutes');
+const booksRoutes = require('./src/routes/bookRoutes');
 
 require('dotenv').config();
 require('./src/models/User'); // Ajusta la ruta según la ubicación de tu modelo User.
@@ -18,6 +19,7 @@ app.use(express.json());
 app.use(passport.initialize())
 // Auth routes
 app.use('/auth', authRoutes);
+app.use('/books', booksRoutes);
 
 //Connect to MongoDB
 
